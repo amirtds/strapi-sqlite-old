@@ -3,7 +3,7 @@ services:
     name: strapi
     env: node
     plan: starter
-    buildCommand: yarn install && yarn build
+    buildCommand: yarn install && yarn develop
     startCommand: rsync -a public/ /data/public/ && yarn start
     healthCheckPath: /_health
     disk:
@@ -14,7 +14,7 @@ services:
       - key: NODE_VERSION
         value: 12.18.4
       - key: NODE_ENV
-        value: production
+        value: development
       - key: DATABASE_FILENAME
         value: /data/strapi.db
       - key: JWT_SECRET
